@@ -48,6 +48,10 @@ spec:
       port: 8555
       protocol: TCP
       targetPort: webrtc-tcp
+    - name: rtsp-tcp
+      port: 8554
+      protocol: TCP
+      targetPort: rtsp-tcp
     - name: webrtc-udp
       port: 8555
       protocol: UDP
