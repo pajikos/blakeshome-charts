@@ -47,9 +47,12 @@ spec:
             - name: http
               containerPort: 5000
               protocol: TCP
-            - name: rtmp
-              containerPort: 1935
+            - name: webrtc-tcp
+              containerPort: 8555
               protocol: TCP
+            - name: webrtc-udp
+              containerPort: 8555
+              protocol: UDP
           {{- if .Values.probes.liveness.enabled }}
           livenessProbe:
             httpGet:

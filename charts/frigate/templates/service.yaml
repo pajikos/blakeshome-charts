@@ -44,10 +44,14 @@ spec:
 {{ if (and (eq .Values.service.type "NodePort") (not (empty .Values.service.nodePort))) }}
       nodePort: {{.Values.service.nodePort}}
 {{ end }}
-    - name: rtmp
-      port: 1935
+    - name: webrtc-tcp
+      port: 8555
       protocol: TCP
-      targetPort: rtmp
+      targetPort: webrtc-tcp
+    - name: webrtc-udp
+      port: 8555
+      protocol: UDP
+      targetPort: webrtc-udp
 {{ if (and (eq .Values.service.type "NodePort") (not (empty .Values.service.nodePort))) }}
       nodePort: {{.Values.service.nodePort}}
 {{ end }}
